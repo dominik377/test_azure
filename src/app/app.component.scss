@@ -1,0 +1,44 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.input-group, .object-list, .delete-buttons {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn, .btn-delete {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: #007bff;
+  margin-right: 10px;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  margin-right: 10px;
+}
+
+.dropdown {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
