@@ -17,10 +17,15 @@ export class AppComponent {
   simpleObject: SimpleObject = { a: 1, b: 1, c: 1 };
   objectsList: SimpleObject[] = [];
   selectedObjectId: string = '';
-   serverUrl = 'http://localhost:3000';
+  serverUrl = 'http://localhost:3000';
+  backendPingReceived = false;
 
   constructor(private http: HttpClient) {
     this.getObjects();
+  }
+
+  ngOnInit(): void {
+    this.pingBackend();
   }
 
   createObject(): void {
@@ -51,6 +56,13 @@ export class AppComponent {
   loadObject(id: string): void {
     this.http.get<SimpleObject>(this.serverUrl + `/api/objects/${id}`).subscribe(data => {
       this.simpleObject = data;
+    });
+  }
+
+  pingBackend(): void {
+    this.http.get(this.serverUrl + '/api/ping').subscribe(data => {
+      this.backendPingReceived = true;
+      console.log("Backend ping received!");
     });
   }
 }

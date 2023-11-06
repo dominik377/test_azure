@@ -20,4 +20,8 @@
     </button>
   </div>
 </div>
+<div *ngIf="backendPingReceived">
+  Backend ping received
+</div>
+<button (click)="pingBackend()" class="btn">Ping Backend</button>
 
