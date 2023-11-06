@@ -17,7 +17,7 @@ export class AppComponent {
   simpleObject: SimpleObject = { a: 1, b: 1, c: 1 };
   objectsList: SimpleObject[] = [];
   selectedObjectId: string = '';
-  serverUrl = 'http://localhost:3000';
+  serverUrl = 'http://localhost:3001';
   backendPingReceived = false;
 
   constructor(private http: HttpClient) {

@@ -16,6 +16,7 @@ var corsOptions = {
 }
 app.use(cors(corsOptions));
 
+const PORT = 3001;
 
 
 mongoose.connect('mongodb://localhost:27017/simpleobjects', { useNewUrlParser: true });
@@ -46,4 +47,9 @@ app.get('/api/objects/:id', async (req, res) => {
   res.send(object);
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+// simple ping - pong
+app.get('/api/ping', (req, res) => {
+  res.send('pong');
+});
+
+app.listen(PORT, () => console.log('Server running on port ' + PORT));
